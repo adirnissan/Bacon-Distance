@@ -1,0 +1,52 @@
+# database format:
+actors:
+  Vin Diesel:
+    movies:
+      - Fast and Furious
+  Gal Gadot:
+    movies:
+      - Fast and Furious
+      - Justice League
+  Ben Affleck:
+    movies:
+      - Justice League
+  Henry Cavill:
+    movies:
+      - Justice League
+  Amy Adams:
+    movies:
+      - Justice League
+  Jason Momoa:
+    movies:
+      - Justice League
+  Ezra Miller:
+    movies:
+      - Justice League
+  Ray Fisher:
+    movies:
+      - Justice League
+  Dwayne Johnson:
+    movies:
+      - Red Notice
+  Ryan Reynolds:
+    movies:
+      - Red Notice
+movies:
+  Fast and Furious:
+    actors:
+      - Vin Diesel
+      - Gal Gadot
+  Justice League:
+    actors:
+      - Gal Gadot
+      - Ben Affleck
+      - Henry Cavill
+      - Amy Adams
+      - Jason Momoa
+      - Ezra Miller
+      - Ray Fisher
+  Red Notice:
+    actors:
+      - Dwayne Johnson
+      - Gal Gadot
+      - Ryan Reynolds
