@@ -1,16 +1,14 @@
-
-from fastapi import FastAPI
-from typing import Union
+from fastapi import FastAPI, HTTPException
+from typing import Optional, Dict, Union
 from bacon_distance import bacon_distance
 from database import db
-from math import inf
 
 app = FastAPI()
 
-@app.get("/bacon_distance")
-def get_bacon_distance(actor_name: str) -> Union[int, float]:
-    
+
+@app.get("/bacon-distance")
+def get_bacon_distance(actor_name: str) -> Dict[str, Union[Optional[int], str]]:
     if not db.is_actor_in_database(actor_name):
-        return -1  # Actor not in database
+        raise HTTPException(status_code=404, detail="Actor not found")
     distance = bacon_distance.get_bacon_distance(actor_name)
-    return distance if distance is not None else inf  # Return infinity if actor is not connected to Kevin Bacon
+    return {"actor": actor_name, "bacon_distance": distance}
