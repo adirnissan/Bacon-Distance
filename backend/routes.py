@@ -7,7 +7,7 @@ from math import inf
 
 app = FastAPI()
 
-@app.get("/bacon-distance/{actor_name}")
+@app.get("/bacon_distance")
 def get_bacon_distance(actor_name: str) -> Union[int, float]:
     
     if not db.is_actor_in_database(actor_name):
